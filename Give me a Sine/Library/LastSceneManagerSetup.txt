@@ -1,0 +1,4 @@
+sceneSetups:
+- path: D:/informatika/hakaton/game_space/Assets/465.unity
+  isLoaded: 1
+  isActive: 1
