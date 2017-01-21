@@ -16,7 +16,10 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="character_walk_5.svg">
+   sodipodi:docname="character_walk_5.svg"
+   inkscape:export-filename="/home/sylvia/src/gamejam/Give me a Sine/Assets/raw/character_walk_5.png"
+   inkscape:export-xdpi="90"
+   inkscape:export-ydpi="90">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -27,8 +30,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.9899495"
-     inkscape:cx="210.43715"
-     inkscape:cy="341.7344"
+     inkscape:cx="51.338125"
+     inkscape:cy="260.9222"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -48,7 +51,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
