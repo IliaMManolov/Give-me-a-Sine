@@ -7,6 +7,7 @@ public class Obstacle : MonoBehaviour {
     // Use this for initialization
 
     public ClassicalSpawner.ObstacleType type;
+    public Transform sineTransform;
     public static float scrollingSpeed = 0.1f;
     public static float despawnPosX = -30;
     public bool isFlipped = false;
@@ -15,7 +16,8 @@ public class Obstacle : MonoBehaviour {
 
 	void Start ()
     {
-		
+        sineTransform = transform.parent.gameObject.GetComponent<LineRenderer>().transform;
+        Debug.Log(sineTransform);
 	}
 	
 	// Update is called once per frame
@@ -30,6 +32,7 @@ public class Obstacle : MonoBehaviour {
 
         if (transform.position.x < despawnPosX)
             Destroy(gameObject);
+
     }
 
     public void changeType(ClassicalSpawner.ObstacleType newType)
@@ -49,4 +52,21 @@ public class Obstacle : MonoBehaviour {
                 break;
         }
     }
+
+    /*void stickToSine()
+    {
+        LineRenderer sineRenderer = sineTransform.gameObject.GetComponent<LineRenderer>();
+        int l = 0, r = sineRenderer.numPositions;
+
+        while (l<r-1)
+        {
+            int m = (l + r) / 2;
+            if (sineRenderer.GetPosition(m).x < transform.position.x)
+                l = m;
+            else
+                r = m;
+        }
+
+        transform.position = new Vector3(transform.position.x, sineRenderer.GetPosition(l).y, transform.position.y);
+    }*/
 }

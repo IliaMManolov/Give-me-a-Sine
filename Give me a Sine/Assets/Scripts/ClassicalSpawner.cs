@@ -20,29 +20,26 @@ public class ClassicalSpawner : MonoBehaviour
         public float spawnTime; 
     }
 
-    public GameObject obstaclePrefab;
-    public List<Transform> allObstacles;
+    //public GameObject obstaclePrefab;
+    //public List<Transform> allObstacles;
 
     float lastSpawn;
     public float spawnDelta = 5;
     public float scrollingSpeed = 0.1f;
     public Vector2 newObstaclePosition;
     public float despawnPosX = -30.0f;
+    UniversalWaveRender renderer;
 
     
 
 	void Start ()
     {
-        spawnObstacle();
+        renderer = GetComponent<UniversalWaveRender>();
         lastSpawn = Time.time;
-
-        Obstacle.despawnPosX = despawnPosX;
     }
 	
 	void FixedUpdate ()
     {
-        Obstacle.scrollingSpeed = scrollingSpeed;
-        Obstacle.despawnPosX = despawnPosX;
         if (Time.time > lastSpawn + spawnDelta)
         {
             spawnObstacle();
@@ -52,10 +49,8 @@ public class ClassicalSpawner : MonoBehaviour
 
     public void spawnObstacle()
     {
-        Transform kek = Instantiate(obstaclePrefab).transform;
-        kek.GetComponent<Obstacle>().changeType((ObstacleType)Mathf.Floor(Random.Range(0, 3)));
-        kek.position = newObstaclePosition;
-        kek.parent = transform;
+        Debug.Log("Spawned one!");
+        renderer.addObstacle((ObstacleType)Mathf.Floor(Random.Range(0, 3)));
 
     }
 }
